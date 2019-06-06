@@ -58,23 +58,23 @@ function dropDownChanged(event){
 }
 
 
-// function attachListeners(){
+function attachListeners(){
 
-//   $('option').on('change', event =>{
-//     const $choice = $(event.target);
-//     const value = $choice.val();
+  $('option').on('change', event =>{
+    const $choice = $(event.target);
+    const value = $choice.val();
 
-//     if(value === 'default'){
-//       $('h2').not('.photo-template').show();
+    if(value === 'default'){
+      $('h2').not('.photo-template').show();
 
-//     }else{
-//       (value === 'keyword');
-//       $('h2').hide();
-//       $('h2[data-type="keyword"]').show();
-//     }
-//   });
+    }else{
+      (value === 'keyword');
+      $('h2').hide();
+      $('h2[data-type="keyword"]').show();
+    }
+  });
 
-// }
+}
 
 $(startApp);
 

@@ -1,0 +1,23 @@
+img{
+    float: left;
+    width: 20%;
+    border: 2px solid yellow;
+    
+}
+
+p{
+    padding: 3px;
+    background-color: rgb(255, 165, 0, 1);
+    width: 20%;
+    text-align: center;
+    line-height: 1.6em;
+    border-radius: 10px;
+}
+
+.horns{
+    visibility: hidden;
+}
+
+#description{
+    visibility: hidden;
+}

@@ -8,8 +8,12 @@
     border-radius: 20px 20px 20px 20px;
     background-color: rgba(126, 157, 216, 0.76);
 
+    overflow:auto; 
 }
+    
 
-.img{
-float: left;
+
+
+section{
+    float: left;
 }

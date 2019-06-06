@@ -3,7 +3,7 @@
 function startApp(){
   loadData();
 
-  // attachListeners();
+  attachListeners();
 }
 
 function loadData(){
@@ -26,6 +26,7 @@ function displayPage(hornObj) {
     $newHorn.find('.horns').text(horn.horns);
     $newHorn.removeClass('photo-template');
     $newHorn.find('select').text(horn.keyword);
+    $newHorn.attr('data-type', horn.keyword);
 
     $('.hornObj').append($newHorn);
 
@@ -41,7 +42,6 @@ function dropMenu(keywordList) {
     }
   });
 
-
   keywordArray.forEach((keywordInfo)=> {
     const $markup = `<option value="${keywordInfo}">${keywordInfo}</option>`;
     $('#drop-down-menu').append($markup);
@@ -49,35 +49,23 @@ function dropMenu(keywordList) {
   });
 
 
-  $('#drop-down-menu').on('change', dropDownChanged);
+  // $('#drop-down-menu').on('change', attachListeners);
 }
-function dropDownChanged(event){
-  const value = $(event.target).val();
-  alert(value);
-
-}
-
 
 function attachListeners(){
 
-  $('option').on('change', event =>{
+  $('select').on('change', event =>{
     const $choice = $(event.target);
     const value = $choice.val();
 
-    if(value === 'default'){
-      $('h2').not('.photo-template').show();
+    console.log('value', value);
+    $('section').hide();
 
-    }else{
-      (value === 'keyword');
-      $('h2').hide();
-      $('h2[data-type="keyword"]').show();
-    }
-  });
+    $(`section[data-type="${value}"]`).show();
 
+    // console.log('select sections', $('section').attr('data-type', value));
+
+  })
 }
 
 $(startApp);
-
-
-
-

@@ -42,7 +42,6 @@ function dropMenu(keywordList) {
     }
   });
 
-
   keywordArray.forEach((keywordInfo)=> {
     const $markup = `<option value="${keywordInfo}">${keywordInfo}</option>`;
     $('#drop-down-menu').append($markup);
@@ -52,8 +51,6 @@ function dropMenu(keywordList) {
 
   // $('#drop-down-menu').on('change', attachListeners);
 }
-
-
 
 function attachListeners(){
 

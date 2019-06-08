@@ -2,8 +2,9 @@
 
 function startApp(){
   loadData();
-
+  addEventListeners();
   attachListeners();
+  showPage();
 }
 
 function loadData(){
@@ -48,8 +49,19 @@ function dropMenu(keywordList) {
 
   });
 
-
   // $('#drop-down-menu').on('change', attachListeners);
+}
+
+$(startHandlebar);
+
+functon startHandlebar() {
+const template = $('#horn-template').html();
+const render = Handlebars.compile(template);
+const context = {
+  title: 'horn.title'
+}
+const result = render(context);
+
 }
 
 function attachListeners(){
@@ -66,6 +78,20 @@ function attachListeners(){
     // console.log('select sections', $('section').attr('data-type', value));
 
   })
+}
+function addEventListeners(){
+$('nav li').on('click', event => {
+const pageNum = $(event.target).attr('data-page');
+showPage(pageNum)
+});
+}
+function showPage(pageNum) {
+  $('.page').hide();
+  if(pageNum === 1) {
+    $('.page-1').show(1000);
+  } else {
+    $('.page-2').show(1000);
+  }
 }
 
 $(startApp);

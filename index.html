@@ -10,10 +10,7 @@
     <link rel="stylesheet" href="css/layout.css">
     <link rel="stylesheet" href="css/modules.css">
     <link href="https://fonts.googleapis.com/css?family=Asset|Boogaloo|Exo+2:800|Modak|Vollkorn:700&display=swap" rel="stylesheet">
-    <script id="horn-template" type="text/x-handlebars-template">
-    <div>{{title}}</div>
 
-    </script>
   </head>
   <body>
     <header>
@@ -23,19 +20,18 @@
       </select>
     </header>
     <main>
-      <nav>
         <ul>
-          <li data-page="1">Page 1</li>
-          <li data-page="2">Page 2</li>
-        </ul>
-      </nav>
-      <section class ="page" id ="page-1">Page 1</section>
-      <section class ="page" id ="page-2">Page 2</section>
-      <section class="photo-template">
+            <li data-page ="1">Page 1</li>
+            <li data-page ="2">Page 2</li>
+          </ul>
+      <section class="page page-1 photo-template">
         <h2>Title</h2>
         <img src="" alt="">
         <p id='description'>Description</p>
         <p class="horns">Horns</p>
+      </section>
+      <section class = "page page-2">
+        <p>Coming Soon</p>
       </section>
       <div class="img-wrapper">
         <div class="hornObj"></div>
@@ -45,7 +41,7 @@
       &copy; 2018 Code Fellows
     </footer>
     <script src="https://code.jquery.com/jquery-3.4.1.js"integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.2/handlebars.amd.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.2/handlebars.amd.js"></script> -->
     <script src="js/app.js"></script>
   </body>
 </html>

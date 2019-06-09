@@ -1,10 +1,10 @@
 
 
 function startApp(){
+  $('.page-2').hide();
   loadData();
-  addEventListeners();
+  togglePage();
   attachListeners();
-  showPage();
 }
 
 function loadData(){
@@ -15,6 +15,27 @@ function loadData(){
   $.get('data/page-1.json', 'json')
     .then(success)
     .catch(failure);
+}
+
+function togglePage(){
+  $('ul li').on('click', event => {
+    const pageNum = $(event.target).data('page');
+    console.log('hello', pageNum);
+    showPage(pageNum);
+  })
+}
+
+function showPage(pageNum){
+  $('.page').hide();
+
+  if(pageNum === 1){
+
+    $('.page-1').show(1000);
+
+  }else{
+    $('.page-2').show(1000);
+
+  }
 }
 
 function displayPage(hornObj) {
@@ -49,19 +70,8 @@ function dropMenu(keywordList) {
 
   });
 
+
   // $('#drop-down-menu').on('change', attachListeners);
-}
-
-$(startHandlebar);
-
-functon startHandlebar() {
-const template = $('#horn-template').html();
-const render = Handlebars.compile(template);
-const context = {
-  title: 'horn.title'
-}
-const result = render(context);
-
 }
 
 function attachListeners(){
@@ -78,20 +88,6 @@ function attachListeners(){
     // console.log('select sections', $('section').attr('data-type', value));
 
   })
-}
-function addEventListeners(){
-$('nav li').on('click', event => {
-const pageNum = $(event.target).attr('data-page');
-showPage(pageNum)
-});
-}
-function showPage(pageNum) {
-  $('.page').hide();
-  if(pageNum === 1) {
-    $('.page-1').show(1000);
-  } else {
-    $('.page-2').show(1000);
-  }
 }
 
 $(startApp);

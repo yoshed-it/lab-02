@@ -1,19 +1,19 @@
-
-
-.img-wrapper{
-    width: 80%;
+ 
+ main {
+    display: flex;
+    flex-wrap: wrap;
+    width: 75%;
+    text-align: center;
+    justify-content:;
     margin: 0 auto;
+  }
+ 
+ .img-wrapper{
+    width: 80%;
     padding: 50px;
     border: 8px solid #004042;
     border-radius: 20px 20px 20px 20px;
-    background-color: rgba(126, 157, 216, 0.76);
+    background-color: rgba(126, 157, 216, 0.76); 
 
-    overflow:auto; 
 }
-    
 
-
-
-section{
-    float: left;
-}

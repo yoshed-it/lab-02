@@ -1,18 +1,10 @@
-*{
-
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-
-}
 
 
 body{
     background-image: url("/assets/bk-rd.png");
     background-attachment: fixed;
-    background-repeat: no-repeat;
+    background-repeat:no-repeat;
+    
     
 }
 
@@ -26,3 +18,4 @@ body{
     margin-top: 5%;
 
 }
+

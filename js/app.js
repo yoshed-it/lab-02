@@ -1,8 +1,9 @@
 
 
 function startApp(){
+  // $('.page-2').hide();
   loadData();
-
+  togglePage();
   attachListeners();
 }
 
@@ -16,20 +17,30 @@ function loadData(){
     .catch(failure);
 }
 
+function togglePage(){
+  $('ul li').on('click', event => {
+    const pageNum = $(event.target).data('page');
+    console.log('hello', pageNum);
+    showPage(pageNum);
+  })
+}
+
+function showPage(pageNum){
+  $('.page').hide();
+  return(pageNum === 1)?$('.page-1').show(1000):$('.page-2').show(1000);
+}
+
 function displayPage(hornObj) {
+
+  const template = $('#horn-template').html();
+  const render = Handlebars.compile(template);
+
   dropMenu(hornObj);
   hornObj.forEach(horn => {
-    const $newHorn = $('.photo-template').clone();
-    $newHorn.find('img').attr('src', horn.image_url);
-    $newHorn.find('h2').text(horn.title);
-    $newHorn.find('p').text(horn.description);
-    $newHorn.find('.horns').text(horn.horns);
-    $newHorn.removeClass('photo-template');
-    $newHorn.find('select').text(horn.keyword);
-    $newHorn.attr('data-type', horn.keyword);
 
-    $('.hornObj').append($newHorn);
-
+    const newHorn = render(horn);
+    $('.hornObj').append(newHorn);
+    
   });
 }
 

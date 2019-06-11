@@ -5,16 +5,18 @@
   <head>
     <title>The Gallery of Horns</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/layout.css">
     <link rel="stylesheet" href="css/modules.css">
     <link href="https://fonts.googleapis.com/css?family=Asset|Boogaloo|Exo+2:800|Modak|Vollkorn:700&display=swap" rel="stylesheet">
 <script id= "horn-template" type="text/x-handlebars-template">
+  <div class="horn-img">
   <h2>{{title}}</h2>
   <img src="{{image_url}}" alt="{{description}}">
   <p id='description'>{{description}}</p>
   <p class="horns">{{horns}}</p>
+</div>
 </script>
   </head>
   <body>
@@ -35,8 +37,8 @@
       <section class = "page page-2">
         <p>Coming Soon</p>
       </section>
-      <div class="img-wrapper">
-        <div class="hornObj"></div>
+      <div class="hornObj">
+        
       </div>
     </main>
     <footer>

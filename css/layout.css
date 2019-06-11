@@ -1,19 +1,27 @@
 
 
-.img-wrapper{
-    width: 80%;
+.hornObj{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    width: 80%; 
     margin: 0 auto;
-    padding: 50px;
-    border: 8px solid #004042;
+    padding: 50px; 
+    
     border-radius: 20px 20px 20px 20px;
     background-color: rgba(126, 157, 216, 0.76);
+    border: 5px solid  rgba(126, 157, 216, 1);
 
-    overflow:auto; 
+}
+.horn-img{
+    width: 30%;
+    text-align: center;    
 }
     
 
-
+/* 
 
 section{
-    float: left;
-}
+    
+} */
